@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6tcufan0374u"]
+
+[ext_resource type="Script" path="res://menu.gd" id="1_g4hxe"]
+[ext_resource type="AudioStream" uid="uid://btw43p51vmx88" path="res://music/18. Grimmeld Goose Manor.wav" id="2_dgkyu"]
+[ext_resource type="PackedScene" uid="uid://d207kucqdheh0" path="res://bg.tscn" id="3_f6ovo"]
+
+[node name="menu" type="Node2D"]
+script = ExtResource("1_g4hxe")
+
+[node name="play" type="Button" parent="."]
+offset_left = 443.0
+offset_top = 93.0
+offset_right = 633.0
+offset_bottom = 182.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.181629, 0.188095, 0.317183, 1)
+theme_override_font_sizes/font_size = 50
+text = "play"
+
+[node name="Quit" type="Button" parent="."]
+offset_left = 451.0
+offset_top = 346.0
+offset_right = 641.0
+offset_bottom = 435.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.181629, 0.188095, 0.317183, 1)
+theme_override_font_sizes/font_size = 50
+text = "Quit"
+
+[node name="фон" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_dgkyu")
+volume_db = -5.0
+autoplay = true
+
+[node name="bg" parent="." instance=ExtResource("3_f6ovo")]
+
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
