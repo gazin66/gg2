@@ -1,23 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://b0h87j4u2hbks"]
+[gd_scene load_steps=3 format=3 uid="uid://b0h87j4u2hbks"]
 
 [ext_resource type="Texture2D" uid="uid://dhbajeoglcywd" path="res://pic/byr.png" id="1_egddg"]
 [ext_resource type="Script" path="res://objects/player/byr.gd" id="1_rmlxf"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_1l6jd"]
-radius = 5.5
 
 [node name="BYR" type="CharacterBody2D"]
 collision_layer = 8
 collision_mask = 8
 script = ExtResource("1_rmlxf")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-z_as_relative = false
-position = Vector2(1, 0)
-shape = SubResource("CircleShape2D_1l6jd")
-debug_color = Color(0.439184, 0.570829, 0.512195, 0.42)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-2, -1.19209e-07)
+scale = Vector2(1.14904, 1.28125)
+polygon = PackedVector2Array(-4, -3, -4, 3, 4, 4, 9, 0, 3, -4)
 
-[node name="Byr" type="Sprite2D" parent="."]
-position = Vector2(0, -0.375)
-scale = Vector2(0.537037, 0.51)
+[node name="Byr" type="Sprite2D" parent="CollisionPolygon2D"]
+position = Vector2(0.870293, -0.780488)
+scale = Vector2(0.416667, 0.415)
 texture = ExtResource("1_egddg")

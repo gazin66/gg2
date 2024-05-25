@@ -15,20 +15,11 @@ func _physics_process(delta):
 	if collision_info:
 		var collider = collision_info.get_collider()
 		if collider is TileMap:
-			var bullet_radius = 2
-			var collision_position = collision_info.get_position() + ((movement_direction) *bullet_radius)
-			var cell_x = round(collision_position.x)
-			var cell_y = round(collision_position.y) 
-			collision_position = Vector2(cell_x,cell_y)
+			var collision_position = collision_info.get_position() + movement_direction
 			var local_position = collider.to_local(collision_position)
-			var offset = Vector2(0, 0)  # 1 пиксель по обеим осям
-			var adjusted_local_position = (local_position + offset) 
-			var map_position = collider.local_to_map(adjusted_local_position)
-			 
-			
+			var map_position = collider.local_to_map(local_position)
+
 			collider.erase_cell(0, map_position)
 			print(map_position)
-			print(collision_position)
-			print(adjusted_local_position)
-			print(movement_direction)
+			print(get_position())
 		queue_free()

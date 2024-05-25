@@ -1,5 +1,5 @@
 extends CharacterBody2D
-const SPEED = 300.0
+const SPEED = 200.0
 const FLY_SPEED = 200.0
 const JUMP_VELOCITY = -800.00
 const FLY_GRAVITY = 50.0
