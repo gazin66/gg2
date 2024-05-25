@@ -180,10 +180,10 @@ position = Vector2(4, -1)
 script = ExtResource("1_tqw35")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-5, 2)
-scale = Vector2(1.01526, 0.92535)
+position = Vector2(-3, -1)
+scale = Vector2(1.01783, 0.888207)
 sprite_frames = SubResource("SpriteFrames_val1p")
-animation = &"run"
+animation = &"stop"
 autoplay = "stop"
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -197,5 +197,5 @@ position_smoothing_enabled = true
 drag_horizontal_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-4, 2)
+position = Vector2(-4, 0)
 shape = SubResource("RectangleShape2D_ktjhp")
