@@ -186,7 +186,7 @@ scale = Vector2(1.01783, 0.888207)
 sprite_frames = SubResource("SpriteFrames_val1p")
 animation = &"stop"
 autoplay = "stop"
-frame_progress = 0.0128262
+frame_progress = 0.130416
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-4, 1)

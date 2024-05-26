@@ -86,16 +86,4 @@ func _process(delta):
 		existing_bullet.look_at(position + direction_to_cursor)
 	move_and_slide()
 
-var timer
-
-func _init():
-	timer = Timer.new()
-	add_child(timer)
-	timer.autostart = true
-	timer.wait_time = 0.5
-	timer.connect("timeout", self, "_timeout")
-
-
-func _timeout():
-	print("Timed out!")
 
