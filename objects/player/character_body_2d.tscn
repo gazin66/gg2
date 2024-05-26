@@ -172,19 +172,21 @@ animations = [{
 "speed": 4.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ktjhp"]
-size = Vector2(25, 25)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_houuu"]
+radius = 12.0
+height = 28.0
 
 [node name="player" type="CharacterBody2D"]
 position = Vector2(4, -1)
 script = ExtResource("1_tqw35")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-3, -1)
+position = Vector2(-4, 0)
 scale = Vector2(1.01783, 0.888207)
 sprite_frames = SubResource("SpriteFrames_val1p")
 animation = &"stop"
 autoplay = "stop"
+frame_progress = 0.0128262
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-4, 1)
@@ -197,5 +199,9 @@ position_smoothing_enabled = true
 drag_horizontal_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-4, 0)
-shape = SubResource("RectangleShape2D_ktjhp")
+position = Vector2(-5, 1)
+shape = SubResource("CapsuleShape2D_houuu")
+
+[connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
+[connection signal="item_rect_changed" from="." to="." method="_on_item_rect_changed"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

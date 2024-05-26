@@ -1,11 +1,29 @@
 [gd_scene load_steps=3 format=3 uid="uid://bebqwekurx2k7"]
 
 [ext_resource type="Script" path="res://objects/player/giga_byr.gd" id="1_6m8wi"]
+[ext_resource type="Texture2D" uid="uid://dhbajeoglcywd" path="res://pic/byr.png" id="2_auqc2"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ul37k"]
-
-[node name="CharacterBody2D" type="CharacterBody2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_ul37k")
+[node name="giga_byr" type="CharacterBody2D"]
+collision_layer = 8
+collision_mask = 8
 script = ExtResource("1_6m8wi")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(5, 0)
+polygon = PackedVector2Array(-5, -8, 21, -2, 21, 1, -5, 7, -5, -2)
+
+[node name="Byr" type="Sprite2D" parent="CollisionPolygon2D"]
+show_behind_parent = true
+light_mask = 8
+visibility_layer = 8
+position = Vector2(7, -2)
+scale = Vector2(1.12731, 1.0125)
+texture = ExtResource("2_auqc2")
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 5.0
+one_shot = true
+
+[connection signal="ready" from="Timer" to="." method="_on_timer_ready"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

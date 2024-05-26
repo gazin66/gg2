@@ -13,3 +13,4 @@ func _on_body_entered(body: PhysicsBody2D):
 	if body.is_in_group("enemy"):
 		# Код, выполняемый при столкновении с врагом
 		pass
+		
